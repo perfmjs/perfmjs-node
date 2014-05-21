@@ -1,0 +1,16 @@
+{
+  "name": "perfmjs-node",
+   "description":"perfmjs for Node.js, startup using: C:/Users/Administrator/AppData/Roaming/npm/supervisor.cmd start-server.js, test using: jasmine-node test/",
+  "author": "aicai.tech.web",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.4.8",
+    "jade": "*",
+    "socket.io": "0.9.16",
+    "jasmine-node": "1.14.3"
+  }
+}

@@ -1,0 +1,38 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>【Socket.io】实时系统DEMO</title>
+<body>
+<div id="a">hello</div>
+</body>
+</html>
+<script src="http://localhost:18000/socket.io/socket.io.js"></script>
+<script>
+    var realweb = function() {
+        var jsbf = io.connect('http://localhost:18000/jsbf');
+        jsbf.on('connect', function () {
+            if (typeof jsbfInterval != 'undefined') {
+                clearInterval(jsbfInterval);
+            }
+            renderView("成功连接.....");
+            jsbf.emit("message", {"id": 123});
+        });
+        jsbf.on('disconnect', function () {
+            renderView("断开连接.....");
+            jsbfInterval = setInterval(function() {
+                renderView("222222");
+                realweb();
+            }, 5000);
+        });
+        jsbf.on("message", function(jsonData) {
+            renderView("新赔率：" + jsonData.id);
+        });
+        jsbf.on("heartbeat", function() {
+            renderView("heartbeat");
+        });
+       jsbf.emit("notifyAll", {"id":9999});
+    }
+    realweb();
+    function renderView(txt) {
+        document.getElementById("a").innerHTML = txt;
+    }
+</script>
