@@ -5,7 +5,7 @@
 <div id="a">hello</div>
 </body>
 </html>
-<script src="http://localhost:18000/socket.io/socket.io.js"></script>
+<script src="lib/pusher/client/socket.io.js"></script>
 <script>
     var realweb = function() {
         var jsbf = io.connect('http://localhost:18000/jsbf');
@@ -14,10 +14,10 @@
                 clearInterval(jsbfInterval);
             }
             renderView("成功连接.....");
-            jsbf.emit("message", {"id": 123});
+            //jsbf.emit("message", {"id": 123});
         });
         jsbf.on('disconnect', function () {
-            renderView("断开连接.....");
+            renderView("断开连接....." + io.disconnected);
             jsbfInterval = setInterval(function() {
                 renderView("222222");
                 realweb();
@@ -25,9 +25,6 @@
         });
         jsbf.on("message", function(jsonData) {
             renderView("新赔率：" + jsonData.id);
-        });
-        jsbf.on("heartbeat", function() {
-            renderView("heartbeat");
         });
        jsbf.emit("notifyAll", {"id":9999});
     }
