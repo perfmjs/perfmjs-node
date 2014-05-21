@@ -16,7 +16,7 @@ fast by default;高效，易用，易读
 
 启动项目命令列表
 =======
-1.安装node.js
+1.安装javascript编辑器WebStorm(目前用8.0), 安装node.js环境
 
 2.安装热部署插件supervisor(反安装npm uninstall)  >npm install supervisord -g
 
