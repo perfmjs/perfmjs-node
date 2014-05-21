@@ -18,14 +18,14 @@ fast by default;高效，易用，易读
 =======
 1.安装node.js
 
-2.安装热部者插件supervisor  >npm install supervisord -g
+2.安装热部者插件supervisor(反安装npm uninstall)  >npm install supervisord -g
 
 3.安装单元测试插件jasmine-node >npm install jasmine-node -g
 
 4.在项目路径下执行命令安装项目依赖的插件 >npm install
 
-5.在项目路径下启动程序: node start-server.js
+5.在项目路径下启动程序: >node start-server.js
 
-也可使用用热部署插件启动，如C:/Users/Administrator/AppData/Roaming/npm/supervisor.cmd start-server.js
+也可使用用热部署插件启动，>C:/Users/Administrator/AppData/Roaming/npm/supervisor.cmd start-server.js
 
-6.在项目路径下测试：jasmine-node test/
+6.在项目路径下测试：>jasmine-node test/
