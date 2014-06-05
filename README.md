@@ -4,7 +4,7 @@ perfmjs(high performance javascript framework) for Node.js  V0.9.1
 
 Features:
 =======
-fast by default;高效，易用，易读
+fast by default：高效，易用，易读
 
 原生态支持面向对象(OO)功能
 
@@ -26,6 +26,6 @@ fast by default;高效，易用，易读
 
 5.在项目路径下启动程序: >node start-server.js
 
-也可使用热部署插件启动，>C:/Users/Administrator/AppData/Roaming/npm/supervisor.cmd start-server.js
+也可使用热部署插件启动　>C:/Users/Administrator/AppData/Roaming/npm/supervisor.cmd start-server.js
 
 6.在项目路径下测试：>jasmine-node test/

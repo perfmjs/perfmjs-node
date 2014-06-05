@@ -1,35 +1,11 @@
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<head>
 <title>【Socket.io】实时系统DEMO</title>
+</head>
 <body>
-<div id="a">hello</div>
+<div id="renderId">socket.io hello world!</div>
+<input type="button" value="click me" onclick="javascript:document.getElementById('renderId').innerHTML = 'clicked me';"></imput>
+<script type="text/javascript" src="http://nodeclient.no100.com/core.js?v=2014052701^{n:'socketio-comm',f:'http://nodeclient.no100.com/include.js',t:'js',m:'socketio;',d:'http://nodeclient.no100.com'}"></script>
 </body>
 </html>
-<script src="lib/pusher/client/socket.io.js"></script>
-<script>
-    var realweb = function() {
-        var jsbf = io.connect('http://localhost:18000/jsbf');
-        jsbf.on('connect', function () {
-            if (typeof jsbfInterval != 'undefined') {
-                clearInterval(jsbfInterval);
-            }
-            renderView("成功连接.....");
-            //jsbf.emit("message", {"id": 123});
-        });
-        jsbf.on('disconnect', function () {
-            renderView("断开连接....." + io.disconnected);
-            jsbfInterval = setInterval(function() {
-                renderView("222222");
-                realweb();
-            }, 5000);
-        });
-        jsbf.on("message", function(jsonData) {
-            renderView("新赔率：" + jsonData.id);
-        });
-       jsbf.emit("notifyAll", {"id":9999});
-    }
-    realweb();
-    function renderView(txt) {
-        document.getElementById("a").innerHTML = txt;
-    }
-</script>
