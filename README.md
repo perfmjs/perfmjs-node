@@ -1,6 +1,6 @@
 perfmjs-node
 =======
-perfmjs(high performance javascript framework) for Node.js  V0.9.1
+perfmjs(high performance javascript framework) for Node.js  V1.0
 
 Features:
 =======
