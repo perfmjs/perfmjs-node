@@ -10,7 +10,9 @@ fast by default：高效，易用，易读
 
 更高效的插件开发机制
 
-支持事件代理,AOP,状态机,日志等功能
+支持事件代理,　AOP,　状态机,　日志等功能
+
+支持Real-time App(服务器推/WebSocket/Polling-xhr/Polling-jsonp)功能
 
 可测试性，通过了jasmine库的测试
 
