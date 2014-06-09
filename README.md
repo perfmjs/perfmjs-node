@@ -31,3 +31,20 @@ fast by default：高效，易用，易读
 也可使用热部署插件启动　>C:/Users/Administrator/AppData/Roaming/npm/supervisor.cmd startServer.js
 
 6.在项目路径下测试：>jasmine-node test/
+
+7.压力测试使用websocket-bench
+
+可选依赖包
+=======
+"dependencies": {
+"socket.io": "1.0.4",
+"jasmine-node": "1.14.3",
+"websocket-bench": "0.0.6"
+}
+>npm install socket.io@1.0.4
+>npm install jasmine-node@1.14.3 -g
+>npm install websocket-bench@0.0.6 -g
+
+发布
+=======
+>npm publish --tag 1.0.0

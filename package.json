@@ -17,8 +17,5 @@
         "socket.io"
   ],
   "dependencies": {
-    "socket.io": "1.0.4",
-    "jasmine-node": "1.14.3",
-    "websocket-bench": "0.0.6"
   }
 }
