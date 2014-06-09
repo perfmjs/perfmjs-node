@@ -3,7 +3,7 @@
    "description":"perfmjs(high performance javascript framework) for Node.js",
   "author": "tony",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "start": "node startServer.js"
   },
@@ -17,7 +17,6 @@
         "socket.io"
   ],
   "dependencies": {
-    "express": "4.4.1",
     "socket.io": "1.0.4",
     "jasmine-node": "1.14.3",
     "websocket-bench": "0.0.6"
