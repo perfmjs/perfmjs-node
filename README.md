@@ -56,8 +56,9 @@ fast by default：高效，易用，易读
 
 >npm publish --tag 1.0.6
 
-DEMO
+How to use
 =======
+>npm install perfmjs-node
 startServer.js
 ```js
 //应用入口函数
