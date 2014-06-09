@@ -1,12 +1,21 @@
 {
   "name": "perfmjs-node",
    "description":"perfmjs(high performance javascript framework) for Node.js",
-  "author": "aicai.tech.web",
+  "author": "tony",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node startServer.js"
   },
+  "repository": {
+     "type": "git",
+     "url": "https://github.com/perfmjs/perfmjs-node.git"
+  },
+  "keywords": [
+        "perfmjs",
+        "perfmjs-node",
+        "socket.io"
+  ],
   "dependencies": {
     "express": "4.4.1",
     "socket.io": "1.0.4",
