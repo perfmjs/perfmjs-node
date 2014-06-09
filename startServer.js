@@ -1,3 +1,6 @@
-var jsbfServerPusher = require("./lib/pusher/server/jsbf/jsbfServerPusher");
-perfmjs.app.newInstance().register("jsbfServerPusher", jsbfServerPusher);
-perfmjs.app.instance.startAll();
+//应用入口函数
+var jsbfPusher = require("./lib/pusher/server/jsbf/jsbfPusher");
+perfmjs.ready(function($$,app) {
+    app.register("jsbfPusher", jsbfPusher);
+    app.startAll();
+});

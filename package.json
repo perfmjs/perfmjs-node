@@ -2,13 +2,13 @@
   "name": "perfmjs-node",
    "description":"perfmjs(high performance javascript framework) for Node.js",
   "author": "aicai.tech.web",
-  "version": "0.9.1",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "4.3.2",
+    "express": "4.4.1",
     "socket.io": "1.0.4",
     "jasmine-node": "1.14.3",
     "websocket-bench": "0.0.6"
