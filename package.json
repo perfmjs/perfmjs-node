@@ -2,7 +2,7 @@
   "name": "perfmjs-node",
    "description":"perfmjs(high performance javascript framework) for Node.js",
   "author": "tony",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": false,
   "scripts": {
     "start": "node startServer.js"
@@ -14,7 +14,7 @@
   "keywords": [
         "perfmjs",
         "perfmjs-node",
-        "socket.io"
+        "high performance"
   ],
   "dependencies": {
   }
