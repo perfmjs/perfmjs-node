@@ -42,9 +42,11 @@ fast by default：高效，易用，易读
 "websocket-bench": "0.0.6"
 }
 >npm install socket.io@1.0.4
+
 >npm install jasmine-node@1.14.3 -g
+
 >npm install websocket-bench@0.0.6 -g
 
 发布
 =======
->npm publish --tag 1.0.0
+>npm publish --tag 1.0.1
