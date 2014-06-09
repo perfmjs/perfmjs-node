@@ -37,13 +37,9 @@ fast by default：高效，易用，易读
 可选依赖包
 =======
 "dependencies": {
-
 "socket.io": "1.0.4",
-
 "jasmine-node": "1.14.3",
-
 "websocket-bench": "0.0.6"
-
 }
 
 >npm install socket.io@1.0.4
@@ -57,7 +53,7 @@ fast by default：高效，易用，易读
 先修改package.json的版本号，如从1.0.1升到1.0.2,然后在项目路径下运行如下命令
 
 >npm unpublish perfmjs-node@1.0.1
->npm publish perfmjs-node --tag 1.0.2
+>npm publish --tag 1.0.2
 
 DEMO
 =======
