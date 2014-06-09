@@ -58,9 +58,10 @@ fast by default：高效，易用，易读
 DEMO
 =======
 startServer.js
-
+```js
 //应用入口函数
 var perfmjs = require("perfmjs-node");
 perfmjs.ready(function($$, app) {
     console.log('hello');
 });
+```
