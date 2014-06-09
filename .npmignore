@@ -2,3 +2,5 @@ support
 test
 examples
 lib/pusher
+startServer.js
+index.html
