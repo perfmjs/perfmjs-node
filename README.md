@@ -59,6 +59,7 @@ fast by default：高效，易用，易读
 How to use
 =======
 >npm install perfmjs-node
+
 startServer.js
 ```js
 //应用入口函数
