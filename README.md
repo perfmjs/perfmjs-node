@@ -49,4 +49,4 @@ fast by default：高效，易用，易读
 
 发布
 =======
->npm publish --tag 1.0.1
+>npm publish perfmjs-node --tag 1.0.1
