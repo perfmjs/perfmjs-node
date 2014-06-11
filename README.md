@@ -1,6 +1,6 @@
 perfmjs-node
 =======
-perfmjs(high performance javascript framework) for Node.js  V1.0.6
+perfmjs(high performance javascript framework) for Node.js  V1.0.7
 
 Features:
 =======
@@ -26,9 +26,9 @@ fast by default：高效，易用，易读
 
 4.在项目路径下执行命令安装项目依赖的插件 >npm install
 
-5.在项目路径下启动程序: >node startServer.js
+5.在项目路径下启动程序 >node startServer.js
 
-也可使用热部署插件启动　>C:/Users/Administrator/AppData/Roaming/npm/supervisor.cmd startServer.js
+也可使用热部署插件启动 >C:/Users/Administrator/AppData/Roaming/npm/supervisor.cmd startServer.js
 
 6.在项目路径下测试：>jasmine-node test/
 
@@ -50,11 +50,11 @@ fast by default：高效，易用，易读
 
 发布
 =======
-先修改README.md和package.json的版本号，如从1.0.5升到1.0.6,然后在项目路径下运行如下命令
+先修改README.md和package.json的版本号，如从1.0.6升到1.0.7,然后在项目路径下运行如下命令
 
->npm unpublish perfmjs-node@1.0.5 (这一步不是必需的)
+>npm unpublish perfmjs-node@1.0.6 (这一步不是必需的)
 
->npm publish --tag 1.0.6
+>npm publish --tag 1.0.7
 
 How to use
 =======
@@ -63,7 +63,7 @@ How to use
 startServer.js
 ```js
 //应用入口函数
-var perfmjs = require("perfmjs-node");
+require("perfmjs-node");
 perfmjs.ready(function($$, app) {
     //app.register("jsbfPusher", jsbfPusher);
     //app.startAll();
