@@ -1,6 +1,6 @@
 perfmjs-node
 =======
-perfmjs(high performance javascript framework) for Node.js  V1.0.7
+perfmjs(high performance javascript framework) for Node.js  V1.1.0
 
 Features:
 =======
@@ -50,11 +50,11 @@ fast by default：高效，易用，易读
 
 发布
 =======
-先修改README.md和package.json的版本号，如从1.0.6升到1.0.7,然后在项目路径下运行如下命令
+先修改README.md和package.json的版本号，如从1.0.7升到1.1.0,然后在项目路径下运行如下命令
 
->npm unpublish perfmjs-node@1.0.6 (这一步不是必需的)
+>npm unpublish perfmjs-node@1.0.7 (这一步不是必需的)
 
->npm publish --tag 1.0.7
+>npm publish --tag 1.1.0
 
 How to use
 =======
