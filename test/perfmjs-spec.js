@@ -43,9 +43,9 @@ describe("测试perfmjs-node", function () {
     it("应能测试通过app.js", function () {
         perfmjs.plugin('model1', function($$) {
             $$.base("base.model1", {
-                init: function(event) {
-                    this.eventproxy = event;
-                    this.eventproxy.on($$.sysconfig.events.moduleIsReady, function() {$$.logger.info("module1 is ready!");});
+                init: function(eventProxy) {
+                    this.eventProxy = eventProxy;
+                    this.eventProxy.on($$.sysconfig.events.moduleIsReady, function() {$$.logger.info("module1 is ready!");});
                     return this;
                 },
                 foo: function() {
