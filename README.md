@@ -62,7 +62,9 @@ How to use
 
 startServer.js
 ```js
-//应用入口函数
+/**
+ * 应用入口函数
+ */
 require("perfmjs-node");
 perfmjs.ready(function($$, app) {
     //app.register("jsbfPusher", jsbfPusher);
