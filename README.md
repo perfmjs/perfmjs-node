@@ -16,6 +16,8 @@ fast by default：高效，易用，易读
 
 可测试性，通过了jasmine库的测试
 
+浏览器端的perfmjs框架请移步：https://github.com/perfmjs/perfmjs
+
 启动项目命令列表
 =======
 1.安装javascript编辑器WebStorm(目前用8.0), 安装node.js环境
