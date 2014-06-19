@@ -12,8 +12,6 @@ fast by default：高效，易用，易读
 
 支持事件代理,　AOP,　状态机,　日志等功能
 
-支持Real-time App(服务器推/WebSocket/Polling-xhr/Polling-jsonp)功能
-
 可测试性，通过了jasmine库的测试
 
 浏览器端的perfmjs框架请移步：https://github.com/perfmjs/perfmjs
@@ -39,14 +37,9 @@ fast by default：高效，易用，易读
 可选依赖包
 =======
 "dependencies": {
-"socket.io": "1.0.4",
 "jasmine-node": "1.14.3",
 "websocket-bench": "0.0.6"
 }
-
->npm install socket.io@1.0.5
-
->npm install socket.io-client@1.0.5
 
 >npm install jasmine-node@1.14.3 -g
 
