@@ -1,6 +1,5 @@
 test
 examples
-lib/pusher
 startServer.js
 index.html
 node_modules
