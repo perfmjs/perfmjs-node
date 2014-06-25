@@ -3,12 +3,51 @@
  * 参考：https://www.npmjs.org/package/jasmine-node
  * Created by tony on 2014/5/21.
  */
-require("../lib/perfmjs/perfmjs");
 describe("测试perfmjs-node", function () {
     beforeEach(function() {
+        require("../lib/perfmjs/perfmjs");
+    });
+    it("应能测试通过perfmjs.utils.forEach方法", function () {
+        perfmjs.ready(function($$, app) {
+            $$.utils.forEach(['one', 'two', 'three'], function(item, index) {
+                expect(item).toEqual(['one', 'two', 'three'][index]);
+            });
+        });
     });
     it("应能测试通过perfmjs.utils.isString方法", function () {
         expect(perfmjs.utils.isString('perfmjs')).toEqual(true);
+    });
+    it("应能测试通过joquery.js-updateOrInsert", function () {
+        perfmjs.ready(function($$, app) {
+            var data = [
+                { ID: 1, firstName: "Chris", lastName: "Pearson", BookIDs: [1001, 1002, 1003] },
+                { ID: 9, firstName: "Bernard", lastName: "Sutherland", BookIDs: [1001, 2002, 3003] },
+                { ID: 20, firstName: "Kate", lastName: "Pinkerton", BookIDs: [4001, 3002, 2003] }
+            ];
+            var result = $$.joquery.newInstance(data).updateOrInsert({ID: 0, firstName: "Chris", lastName: "Pearson", BookIDs: [1001, 1002, 1003]}, function(item, index) {
+                return item.ID == 9;
+            }, function(item, index) {
+                return item.ID > 15;
+            });
+            expect(result.index).toEqual(1);
+        });
+    });
+    it("应能测试通过joquery.js-first", function () {
+        perfmjs.ready(function($$, app) {
+            var data = [
+                { ID: 1, firstName: "Chris", lastName: "Pearson", BookIDs: [1001, 1002, 1003] },
+                { ID: 9, firstName: "Kate", lastName: "Sutherland", BookIDs: [1001, 2002, 3003] },
+                { ID: 20, firstName: "Kate", lastName: "Pinkerton", BookIDs: [4001, 3002, 2003] }
+            ];
+            var first = $$.joquery.newInstance(data).first(function(item, index) {
+                return item.firstName === 'Kate';
+            });
+            var last = $$.joquery.newInstance(data).last(function(item, index) {
+                return item.firstName === 'Kate';
+            });
+            expect(first.ID).toEqual(9);
+            expect(last.ID).toEqual(20);
+        });
     });
     it("应能测试通过base.js", function () {
         perfmjs.plugin('xxx', function($$) {
@@ -27,15 +66,6 @@ describe("测试perfmjs-node", function () {
             };
         });
         expect(new xxx().test()).toEqual(12);
-    });
-    it("应能测试通过joquery.js", function () {
-        var SamplesData = [
-            { ID: 1, firstName: "Chris", lastName: "Pearson", BookIDs: [1001, 1002, 1003] },
-            { ID: 9, firstName: "Bernard", lastName: "Sutherland", BookIDs: [1001, 2002, 3003] },
-            { ID: 20, firstName: "Kate", lastName: "Pinkerton", BookIDs: [4001, 3002, 2003] }
-        ];
-        var sample = perfmjs.joquery.newInstance(SamplesData).updateOrInsert({ID: 0, firstName: "Chris", lastName: "Pearson", BookIDs: [1001, 1002, 1003]}, function(item){return item.ID == 9;}, function(item){return item.ID > 15;});
-        expect(sample.index).toEqual(1);
     });
     it("应能测试通过logger.js", function () {
         expect(perfmjs.logger.level).toEqual(2);
@@ -58,10 +88,11 @@ describe("测试perfmjs-node", function () {
                 end: 0
             };
         });
-        perfmjs.app.newInstance();
-        perfmjs.app.instance.register("model1", perfmjs.model1);
-        perfmjs.app.instance.startAll();
-        expect(perfmjs.model1.instance.foo()).toEqual(133);
+        perfmjs.ready(function($$, app) {
+            app.register("model1", $$.model1);
+            app.start('model1');
+            expect($$.model1.instance.foo()).toEqual(133);
+        });
     });
     it("应能测试通过AOP功能", function () {
         perfmjs.plugin('aoptest', function($$) {
@@ -80,8 +111,11 @@ describe("测试perfmjs-node", function () {
                 end: 0
             };
         });
-        perfmjs.aoptest.newInstance();
-        perfmjs.aoptest.instance.test = perfmjs.utils.aop(null, perfmjs.aoptest.instance.test, function(){return 1000;}, function(){});
-        expect(perfmjs.aoptest.newInstance().test()).toEqual(1000);
+        perfmjs.ready(function($$, app) {
+            app.register("aoptest", $$.aoptest);
+            app.start('aoptest');
+            $$.aoptest.instance.test = $$.utils.aop(null, $$.aoptest.instance.test, function(){return 1000;}, function(){});
+            expect($$.aoptest.newInstance().test()).toEqual(1000);
+        });
     });
 });
