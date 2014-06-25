@@ -17,6 +17,21 @@ describe("测试perfmjs-node", function () {
     it("应能测试通过perfmjs.utils.isString方法", function () {
         expect(perfmjs.utils.isString('perfmjs')).toEqual(true);
     });
+    it("map-reduce功能应该可以正常运行", function() {
+        perfmjs.ready(function($$, app) {
+            var items = [], summary = 0;
+            for (i = 0; i < 101; i++) {
+                items[items.length] = i;
+            }
+            var mapResult = $$.utils.fastMap([items.slice(0,31), items.slice(31,61), items.slice(61,101)], function(subItems, subIndex) {
+                return $$.utils.fastReduce(subItems, function(result, item, index) {
+                    summary += item;
+                    return result + item;
+                }, 0);
+            });
+            expect(summary).toEqual(5050);
+        });
+    });
     it("应能测试通过joquery.js-updateOrInsert", function () {
         perfmjs.ready(function($$, app) {
             var data = [
