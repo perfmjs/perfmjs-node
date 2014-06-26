@@ -19,11 +19,11 @@ describe("测试perfmjs-node", function () {
     });
     it("map-reduce功能应该可以正常运行", function() {
         perfmjs.ready(function($$, app) {
-            var items = [], summary = 0;
+            var items = [], summary = 0, mapResult;
             for (i = 0; i < 101; i++) {
                 items[items.length] = i;
             }
-            var mapResult = $$.utils.fastMap([items.slice(0,31), items.slice(31,61), items.slice(61,101)], function(subItems, subIndex) {
+            mapResult = $$.utils.fastMap([items.slice(0,31), items.slice(31,61), items.slice(61,101)], function(subItems, subIndex) {
                 return $$.utils.fastReduce(subItems, function(result, item, index) {
                     summary += item;
                     return result + item;

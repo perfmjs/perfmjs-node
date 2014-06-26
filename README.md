@@ -1,6 +1,6 @@
 perfmjs-node
 =======
-perfmjs(high performance javascript framework) for Node.js  V1.1.6
+perfmjs(high performance javascript framework) for Node.js  V1.1.7
 
 Features:
 =======
@@ -51,7 +51,7 @@ fast by default：高效，易用，易读
 
 >npm unpublish perfmjs-node --force (这一步不是必需的)
 
->npm publish --tag 1.1.6
+>npm publish
 
 How to use
 =======
