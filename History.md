@@ -1,4 +1,14 @@
 
+1.1.9 / 2014-07-08
+==================
+
+ * improved: improved perfmjs.utils#fmtJSONMsg, etc
+
+1.1.8 / 2014-07-02
+==================
+
+ * add: perfmjs.utils#isObject, perfmjs.utils#keys
+
 1.1.7 / 2014-06-26
 ==================
 

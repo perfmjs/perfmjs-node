@@ -1,12 +1,12 @@
 perfmjs-node
 =======
-perfmjs(high performance javascript framework) for Node.js  V1.1.7
+perfmjs(high performance javascript framework) for Node.js  V1.1.9
 
 Features:
 =======
 fast by default：高效，易用，易读
 
-原生态支持面向对象(OO)功能
+原生态支持面向对象(object-oriented)功能
 
 更高效的插件开发机制
 
@@ -15,6 +15,8 @@ fast by default：高效，易用，易读
 可测试性，通过了jasmine库的测试
 
 浏览器端的perfmjs框架请移步：https://github.com/perfmjs/perfmjs
+
+基于perfmjs-node的服务器推送实时系统框架请移步：https://github.com/perfmjs/perfmjs-push
 
 启动项目命令列表
 =======
@@ -69,3 +71,21 @@ perfmjs.ready(function($$, app) {
     $$.logger.info('Hello perfmjs-node!');
 });
 ```
+
+
+License
+-------
+
+Copyright 2011 Joe Hewitt
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.

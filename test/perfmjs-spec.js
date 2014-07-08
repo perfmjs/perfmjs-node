@@ -7,6 +7,16 @@ describe("测试perfmjs-node", function () {
     beforeEach(function() {
         require("../lib/perfmjs/perfmjs");
     });
+    it("应能测试通过perfmjs.utils.fmtJSONMsg方法", function() {
+        perfmjs.ready(function($$, app) {
+            expect($$.utils.fmtJSONMsg().status).toEqual('fail');
+            expect($$.utils.fmtJSONMsg(new Date).status).toEqual('success');
+            expect($$.utils.fmtJSONMsg('{"key":1}').result.key).toEqual(1);
+            expect($$.utils.fmtJSONMsg('{"key":1}').status).toEqual('success');
+            expect($$.utils.fmtJSONMsg({"key":1}).result.key).toEqual(1);
+            expect($$.utils.fmtJSONMsg({"key":2}).status).toEqual('success');
+        });
+    });
     it("应能测试通过perfmjs.utils.forEach方法", function () {
         perfmjs.ready(function($$, app) {
             $$.utils.forEach(['one', 'two', 'three'], function(item, index) {
@@ -16,6 +26,14 @@ describe("测试perfmjs-node", function () {
     });
     it("应能测试通过perfmjs.utils.isString方法", function () {
         expect(perfmjs.utils.isString('perfmjs')).toEqual(true);
+    });
+    it("perfmjs.utils#keys应该能运行正常", function() {
+        perfmjs.ready(function($$, app) {
+            var arr = [1,2,3,4,5];
+            var jsonObj = {'a':1, 'b':2};
+            expect($$.utils.keys(arr).length).toEqual(5);
+            expect($$.utils.keys(jsonObj).length).toEqual(2);
+        });
     });
     it("map-reduce功能应该可以正常运行", function() {
         perfmjs.ready(function($$, app) {
