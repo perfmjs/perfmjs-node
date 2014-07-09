@@ -84,7 +84,7 @@ describe("测试perfmjs-node", function () {
     });
     it("应能测试通过base.js", function () {
         perfmjs.plugin('xxx', function($$) {
-            $$.base("base.xxx", {
+            $$.base("xxx", {
                 init: function(arg) {
                     return this;
                 },
@@ -93,7 +93,7 @@ describe("测试perfmjs-node", function () {
                 },
                 end: 0
             });
-            $$.base.xxx.defaults = {
+            $$.xxx.defaults = {
                 scope: 'singleton',
                 end: 0
             };
@@ -105,7 +105,7 @@ describe("测试perfmjs-node", function () {
     });
     it("应能测试通过app.js", function () {
         perfmjs.plugin('model1', function($$) {
-            $$.base("base.model1", {
+            $$.base("model1", {
                 init: function(eventProxy) {
                     this.eventProxy = eventProxy;
                     this.eventProxy.on($$.sysconfig.events.moduleIsReady, function() {$$.logger.info("module1 is ready!");});
@@ -116,7 +116,7 @@ describe("测试perfmjs-node", function () {
                 },
                 end: 0
             });
-            $$.base.model1.defaults = {
+            $$.model1.defaults = {
                 scope: 'singleton',
                 end: 0
             };
@@ -129,7 +129,7 @@ describe("测试perfmjs-node", function () {
     });
     it("应能测试通过AOP功能", function () {
         perfmjs.plugin('aoptest', function($$) {
-            $$.base("base.aoptest", {
+            $$.base("aoptest", {
                 init: function(arg) {
                     return this;
                 },
@@ -139,7 +139,7 @@ describe("测试perfmjs-node", function () {
                 },
                 end: 0
             });
-            $$.base.aoptest.defaults = {
+            $$.aoptest.defaults = {
                 scope: 'singleton',
                 end: 0
             };
