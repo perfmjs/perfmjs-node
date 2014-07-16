@@ -1,3 +1,7 @@
+1.2.4 / 2014-07-16
+==================
+ * fixed: fixed scope problem in app.js
+
 1.2.3 / 2014-07-16
 ==================
  * fixed: add scope default vlaue in base.js
