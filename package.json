@@ -2,7 +2,7 @@
   "name": "perfmjs-node",
    "description":"perfmjs(high performance javascript framework) for Node.js",
   "author": "tony",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "private": false,
   "scripts": {
     "start": "node start-server.js"
