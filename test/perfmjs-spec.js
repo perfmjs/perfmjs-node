@@ -1,4 +1,5 @@
 /**
+ * npm install jasmine-node -g
  * 在项目根路径下运行测试的方法： jasmine-node test/
  * 参考：https://www.npmjs.org/package/jasmine-node
  * Created by tony on 2014/5/21.
