@@ -102,7 +102,10 @@ describe("测试perfmjs-node", function () {
         expect(new xxx().test()).toEqual(12);
     });
     it("应能测试通过logger.js", function () {
-        expect(perfmjs.logger.level).toEqual(2);
+        perfmjs.ready(function($$, app) {
+            $$.logger.error($$.utils.error('sss'));
+            expect(perfmjs.logger.level).toEqual(2);
+        });
     });
     it("应能测试通过app.js", function () {
         perfmjs.plugin('model1', function($$) {

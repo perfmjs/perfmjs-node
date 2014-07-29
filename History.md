@@ -1,3 +1,7 @@
+1.2.7 / 2014-07-29
+==================
+ * improved: add pretty logger format in logger.js
+
 1.2.6 / 2014-07-23
 ==================
  * improved: improved some function in joquery.js
