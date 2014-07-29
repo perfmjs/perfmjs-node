@@ -103,7 +103,7 @@ describe("测试perfmjs-node", function () {
     });
     it("应能测试通过logger.js", function () {
         perfmjs.ready(function($$, app) {
-            $$.logger.error($$.utils.error('sss'));
+            $$.logger.info('pretty logger!');
             expect(perfmjs.logger.level).toEqual(2);
         });
     });
