@@ -3,3 +3,4 @@ examples
 start-server.js
 index.html
 node_modules
+logs

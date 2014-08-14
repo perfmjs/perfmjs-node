@@ -1,3 +1,7 @@
+1.2.8 / 2014-8-14
+==================
+ * add: 增加datefile日志功能
+
 1.2.7 / 2014-07-29
 ==================
  * improved: add pretty logger format in logger.js
@@ -43,3 +47,5 @@
 1.1.3 / 2014-06-20
 ==================
  * fix: fix some bugs
+
+说明：修改类型为: improved(改善功能)/add(新增功能)/remove(移除功能)/modify(修复功能内容)/fix(修改BUG)
