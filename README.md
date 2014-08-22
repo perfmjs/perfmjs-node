@@ -74,7 +74,7 @@ perfmjs.ready(function($$, app) {
 License
 -------
 
-Copyright 2011 Joe Hewitt
+Copyright 2011 Tony
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
