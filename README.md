@@ -64,8 +64,7 @@ start-server.js
  */
 require("perfmjs-node");
 perfmjs.ready(function($$, app) {
-    //app.register("jsbfPusher", jsbfPusher);
-    //app.startAll();
+    //app.registerAndStart("jsbfPusher", $$.jsbfPusher);
     $$.logger.info('Hello perfmjs-node!');
 });
 ```
