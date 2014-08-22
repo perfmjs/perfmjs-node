@@ -32,7 +32,7 @@ fast by default：高效，易用，易读
 
 也可使用热部署插件启动 >C:/Users/Administrator/AppData/Roaming/npm/supervisor.cmd start-server.js
 
-6.在项目路径下测试：>jasmine-node test/
+6.在项目路径下测试：>mocha(或jasmine-node test/)
 
 7.压力测试使用websocket-bench
 
