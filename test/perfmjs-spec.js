@@ -8,6 +8,16 @@ describe("测试perfmjs-node", function () {
     beforeEach(function() {
         require("../lib/perfmjs/perfmjs");
     });
+    it("应能测试通过perfmjs.utils.isBrowserSupport方法", function() {
+        perfmjs.ready(function($$, app) {
+            expect($$.utils.isBrowserSupport()).toEqual(false);
+        });
+    });
+    it("应能测试通过perfmjs.utils.isH5Supported方法", function() {
+        perfmjs.ready(function($$, app) {
+            expect($$.utils.isH5Supported()).toEqual(true);
+        });
+    });
     it("应能测试通过perfmjs.utils.fmtJSONMsg方法", function() {
         perfmjs.ready(function($$, app) {
             expect($$.utils.fmtJSONMsg().status).toEqual('fail');
@@ -49,6 +59,21 @@ describe("测试perfmjs-node", function () {
                 }, 0);
             });
             expect(summary).toEqual(5050);
+        });
+    });
+    it("应能测试通过异步编程模型async", function() {
+        perfmjs.ready(function($$, app) {
+            var async = require('../lib/perfmjs/async');
+            var deferred = async.defer();
+            $$.utils.nextTick(function() {
+                deferred.resolve('ok');
+            });
+            deferred.promise.then(function(result) {
+                console.log('result=' + result);
+            }, function(result) {
+                console.log('error:' + result);
+            });
+            expect($$.utils.isNodeJSSupport()).toEqual(true);
         });
     });
     it("应能测试通过joquery.js-updateOrInsert", function () {

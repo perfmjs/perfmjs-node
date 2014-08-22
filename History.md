@@ -1,3 +1,8 @@
+1.2.9 / 2014-08-22
+==================
+* add: 在utils中增加方法：isBrowserSupport(), isNodeJSSupport(), isAmdSupport(), isH5Supported()
+* add: 增加promise/A+实现类async.js
+
 1.2.8 / 2014-8-14
 ==================
  * add: 增加datefile日志功能
