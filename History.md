@@ -1,3 +1,7 @@
+1.3.1 / 2014-08-27
+==================
+ * improved: 整理命名空间
+
 
 1.3.0 / 2014-08-26
 ==================
@@ -5,8 +9,8 @@
 
 1.2.9 / 2014-08-22
 ==================
-* add: 在utils中增加方法：isBrowserSupport(), isNodeJSSupport(), isAmdSupport(), isH5Supported()
-* add: 增加promise/A+实现类async.js
+ * add: 在utils中增加方法：isBrowserSupport(), isNodeJSSupport(), isAmdSupport(), isH5Supported()
+ * add: 增加promise/A+实现类async.js
 
 1.2.8 / 2014-8-14
 ==================

@@ -6,6 +6,8 @@ Features:
 =======
 fast by default：高效，易用，易读
 
+实现了异步编程模块(Promises/A+)规范
+
 原生态支持面向对象(object-oriented)功能
 
 更高效的插件开发机制

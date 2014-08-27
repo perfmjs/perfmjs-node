@@ -137,7 +137,7 @@ describe("测试perfmjs-node", function () {
             $$.base("model1", {
                 init: function(eventProxy) {
                     this.eventProxy = eventProxy;
-                    this.eventProxy.on($$.sysconfig.events.moduleIsReady, function() {$$.logger.info("module1 is ready!");});
+                    this.eventProxy.on($$.sysConfig.events.moduleIsReady, function() {$$.logger.info("module1 is ready!");});
                     return this;
                 },
                 foo: function() {
@@ -151,7 +151,7 @@ describe("测试perfmjs-node", function () {
             };
         });
         perfmjs.ready(function($$, app) {
-            app.register("model1", $$.model1);
+            app.register($$.model1);
             app.start('model1');
             expect($$.model1.instance.foo()).toEqual(133);
         });
@@ -163,7 +163,7 @@ describe("测试perfmjs-node", function () {
                     return this;
                 },
                 test: function() {
-                    console.log("called test function in aoptest!")
+                    console.log("called test function in aoptest!");
                     return 12;
                 },
                 end: 0
@@ -174,7 +174,7 @@ describe("测试perfmjs-node", function () {
             };
         });
         perfmjs.ready(function($$, app) {
-            app.register("aoptest", $$.aoptest);
+            app.register($$.aoptest);
             app.start('aoptest');
             $$.aoptest.instance.test = $$.utils.aop(null, $$.aoptest.instance.test, function(){return 1000;}, function(){});
             expect($$.aoptest.newInstance().test()).toEqual(1000);
