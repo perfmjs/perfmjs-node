@@ -13,9 +13,9 @@ describe("测试perfmjs-node", function () {
             expect($$.utils.isBrowserSupport()).toEqual(false);
         });
     });
-    it("应能测试通过perfmjs.utils.isH5Supported方法", function() {
+    it("应能测试通过perfmjs.utils.isH5Support方法", function() {
         perfmjs.ready(function($$, app) {
-            expect($$.utils.isH5Supported()).toEqual(true);
+            expect($$.utils.isH5Support()).toEqual(true);
         });
     });
     it("应能测试通过perfmjs.utils.fmtJSONMsg方法", function() {

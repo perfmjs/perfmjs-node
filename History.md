@@ -1,3 +1,7 @@
+1.3.2 / 2014-08-31
+==================
+* fix: 将perfmjs.utils#isH5Supported方法名改成isH5Support()
+
 1.3.1 / 2014-08-31
 ==================
  * fixed: change $$.sysconfig to $$.sysConfig
@@ -13,7 +17,7 @@
 
 1.2.9 / 2014-08-22
 ==================
- * add: 在utils中增加方法：isBrowserSupport(), isNodeJSSupport(), isAmdSupport(), isH5Supported()
+ * add: 在utils中增加方法：isBrowserSupport(), isNodeJSSupport(), isAmdSupport(), isH5Support()
  * add: 增加promise/A+实现类async.js
 
 1.2.8 / 2014-8-14
