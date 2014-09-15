@@ -1,6 +1,6 @@
 perfmjs-node
 =======
-perfmjs(high performance javascript framework) for Node.js  V1.3.2
+perfmjs(high performance javascript framework) for Node.js  V1.3.3
 
 Features:
 =======
@@ -30,9 +30,9 @@ fast by default：高效，易用，易读
 
 4.在项目路径下执行命令安装项目依赖的插件 >npm install
 
-5.在项目路径下启动程序 >node start-server.js
+5.在项目路径下启动程序 >node start.js
 
-也可使用热部署插件启动 >C:/Users/Administrator/AppData/Roaming/npm/supervisor.cmd start-server.js
+也可使用热部署插件启动 >C:/Users/Administrator/AppData/Roaming/npm/supervisor.cmd start.js
 
 6.在项目路径下测试：>mocha(或jasmine-node test/)
 
