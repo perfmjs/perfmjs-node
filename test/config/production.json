@@ -1,0 +1,10 @@
+{
+    "customer": {
+        "dbConfig": {
+            "host": "prod-db-server123456"
+        },
+        "credit": {
+            "initialDays": 30
+        }
+    }
+}

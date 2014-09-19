@@ -1,3 +1,8 @@
+
+1.3.4 / 2014-09-19
+==================
+* add: 增加管理production和development环境变量的config.js
+
 1.3.3 / 2014-09-15
 ==================
 * improved: 将app.js中error.message改为error.stack
