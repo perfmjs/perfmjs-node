@@ -1,5 +1,5 @@
 {
-    "appenderFile": "E:/logs/app.log",
+    "appenderFile": "logs/app.log",
     "customer": {
         "dbConfig": {
             "host": "prod-db-server123456"

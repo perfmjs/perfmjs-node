@@ -1,5 +1,5 @@
 {
-    "appenderFile1": "E:/logs/app.log",
+    "appenderFile": "logs/app.log",
     // Customter module configs
     "customer": {
         "dbConfig": {
