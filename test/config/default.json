@@ -3,7 +3,7 @@
     // Customter module configs
     "customer": {
         "dbConfig": {
-            "host1": "localhost",
+            "host": "localhost",
             "port": 5984,
             "dbName": "customers"
         },

@@ -4,7 +4,6 @@
 require("./lib/perfmjs/perfmjs");
 perfmjs.ready(function($$, app) {
     $$.logger.info('Hello perfmjs-node!');
-    var config = $$.sysConfig.config;
-    var dbConfig = config.get('customer.dbConfig.host');
-    console.log('====:' + dbConfig);
+    var dbConfig = $$.sysConfig.config.get('customer.dbConfig.host');
+    console.log('dbConfig:' + dbConfig);
 });
