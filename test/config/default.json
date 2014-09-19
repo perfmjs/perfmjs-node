@@ -1,8 +1,9 @@
 {
+    "appenderFile1": "E:/logs/app.log",
     // Customter module configs
     "customer": {
         "dbConfig": {
-            "host": "localhost",
+            "host1": "localhost",
             "port": 5984,
             "dbName": "customers"
         },
