@@ -8,17 +8,17 @@ describe("测试perfmjs-node", function () {
     beforeEach(function() {
         require("../lib/perfmjs/perfmjs");
     });
-    it("应能测试通过perfmjs.utils.isBrowserSupport方法", function() {
+    it("应能通过perfmjs.utils.isBrowserSupport方法测试", function() {
         perfmjs.ready(function($$, app) {
             expect($$.utils.isBrowserSupport()).toEqual(false);
         });
     });
-    it("应能测试通过perfmjs.utils.isH5Support方法", function() {
+    it("应能通过perfmjs.utils.isH5Support方法测试", function() {
         perfmjs.ready(function($$, app) {
             expect($$.utils.isH5Support()).toEqual(true);
         });
     });
-    it("应能测试通过perfmjs.utils.fmtJSONMsg方法", function() {
+    it("应能通过perfmjs.utils.fmtJSONMsg方法测试", function() {
         perfmjs.ready(function($$, app) {
             expect($$.utils.fmtJSONMsg().status).toEqual('fail');
             expect($$.utils.fmtJSONMsg(new Date).status).toEqual('success');
@@ -28,14 +28,14 @@ describe("测试perfmjs-node", function () {
             expect($$.utils.fmtJSONMsg({"key":2}).status).toEqual('success');
         });
     });
-    it("应能测试通过perfmjs.utils.forEach方法", function () {
+    it("应能通过perfmjs.utils.forEach方法测试", function () {
         perfmjs.ready(function($$, app) {
             $$.utils.forEach(['one', 'two', 'three'], function(item, index) {
                 expect(item).toEqual(['one', 'two', 'three'][index]);
             });
         });
     });
-    it("应能测试通过perfmjs.utils.isString方法", function () {
+    it("应能通过perfmjs.utils.isString方法测试", function () {
         expect(perfmjs.utils.isString('perfmjs')).toEqual(true);
     });
     it("perfmjs.utils#keys应该能运行正常", function() {
@@ -46,7 +46,7 @@ describe("测试perfmjs-node", function () {
             expect($$.utils.keys(jsonObj).length).toEqual(2);
         });
     });
-    it("map-reduce功能应该可以正常运行", function() {
+    it("应该能通过map-reduce功能测试", function() {
         perfmjs.ready(function($$, app) {
             var items = [], summary = 0, mapResult;
             for (i = 0; i < 101; i++) {
@@ -61,7 +61,7 @@ describe("测试perfmjs-node", function () {
             expect(summary).toEqual(5050);
         });
     });
-    it("应能测试通过异步编程模型async", function() {
+    it("应能通过异步编程模型async测试", function() {
         perfmjs.ready(function($$, app) {
             var async = require('../lib/perfmjs/async');
             var deferred = async.defer();
@@ -76,7 +76,7 @@ describe("测试perfmjs-node", function () {
             expect($$.utils.isNodeJSSupport()).toEqual(true);
         });
     });
-    it("应能测试通过joquery.js-updateOrInsert", function () {
+    it("应能通过joquery.js-updateOrInsert测试", function () {
         perfmjs.ready(function($$, app) {
             var data = [
                 { ID: 1, firstName: "Chris", lastName: "Pearson", BookIDs: [1001, 1002, 1003] },
@@ -91,7 +91,7 @@ describe("测试perfmjs-node", function () {
             expect(result.index).toEqual(1);
         });
     });
-    it("应能测试通过joquery.js-first", function () {
+    it("应能通过joquery.js-first测试", function () {
         perfmjs.ready(function($$, app) {
             var data = [
                 { ID: 1, firstName: "Chris", lastName: "Pearson", BookIDs: [1001, 1002, 1003] },
@@ -126,13 +126,13 @@ describe("测试perfmjs-node", function () {
         });
         expect(new xxx().test()).toEqual(12);
     });
-    it("应能测试通过logger.js", function () {
+    it("应能通过logger.js测试", function () {
         perfmjs.ready(function($$, app) {
             $$.logger.info('pretty logger!');
             expect(perfmjs.logger.level).toEqual(2);
         });
     });
-    it("应能测试通过app.js", function () {
+    it("应能通过app.js测试", function () {
         perfmjs.plugin('model1', function($$) {
             $$.base("model1", {
                 init: function(eventProxy) {
@@ -156,7 +156,7 @@ describe("测试perfmjs-node", function () {
             expect($$.model1.instance.foo()).toEqual(133);
         });
     });
-    it("应能测试通过AOP功能", function () {
+    it("应能通过AOP功能测试", function () {
         perfmjs.plugin('aoptest', function($$) {
             $$.base("aoptest", {
                 init: function(arg) {
@@ -178,6 +178,15 @@ describe("测试perfmjs-node", function () {
             app.start('aoptest');
             $$.aoptest.instance.test = $$.utils.aop(null, $$.aoptest.instance.test, function(){return 1000;}, function(){});
             expect($$.aoptest.newInstance().test()).toEqual(1000);
+        });
+    });
+
+    it("应能通过Profiler功能测试", function () {
+        perfmjs.ready(function($$, app) {
+            var profiler = $$.profiler.newInstance();
+            profiler.start("test", 10);
+            profiler.stop('test', 12, '代码运行超时了');
+            expect(1).toEqual(1);
         });
     });
 });
