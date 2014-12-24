@@ -185,7 +185,7 @@ describe("测试perfmjs-node", function () {
         perfmjs.ready(function($$, app) {
             var profiler = $$.profiler.newInstance();
             profiler.start("test", 10);
-            profiler.stop('test', 12, '代码运行时间过长');
+            profiler.stop('test', 12, '代码运行毫秒数过长');
             expect(1).toEqual(1);
         });
     });
