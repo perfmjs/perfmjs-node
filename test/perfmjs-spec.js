@@ -176,7 +176,7 @@ describe("测试perfmjs-node", function () {
         perfmjs.ready(function($$, app) {
             app.register($$.aoptest);
             app.start('aoptest');
-            $$.aoptest.instance.test = $$.utils.aop(null, $$.aoptest.instance.test, function(){return 1000;}, function(){});
+            $$.aoptest.instance.test = $$.utils.aop($$.aoptest.instance.test, function(){return 1000;}, function(){});
             expect($$.aoptest.newInstance().test()).toEqual(1000);
         });
     });
